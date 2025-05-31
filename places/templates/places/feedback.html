@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/feedback.css' %}">
+{% endblock %}
+
+{% block content %}
+<header>
+    <div class="logo">Досуг и Ко</div>
+    <nav>
+        <ul>
+            <li><a href="{% url 'users:account' %}"><i class="fas fa-home"></i> Главная</a></li>
+            <li><a href="{% url 'users:account' %}"><i class="fas fa-user-circle"></i> Аккаунт</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="container">
+    <h1>Оцените посещенное место</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            {{ form.place.label_tag }}
+            {{ form.place }}
+        </div>
+        
+        <div class="form-group">
+            <label>Выберите оценку:</label>
+            <div class="simple-rating">
+                {% for radio in form.mark %}
+                    <div class="rating-option">
+                        {{ radio.tag }}
+                        <label for="{{ radio.id_for_label }}">{{ radio.choice_label }}</label>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <div class="form-group">
+            {{ form.feedback.label_tag }}
+            {{ form.feedback }}
+        </div>
+        
+        <button type="submit" class="submit-btn">Отправить отзыв</button>
+    </form>
+</div>
+{% endblock %}
