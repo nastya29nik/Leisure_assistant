@@ -37,7 +37,7 @@ leisure_bot/
 │   ├── css/            
 │   ├── js/             
 │   └── images/  
-├── media/places/images\         
+├── media/places/images/         
 ├── manage.py           
 └── requirements.txt    
 ## База данных
