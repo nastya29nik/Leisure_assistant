@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/add_place.css' %}">
+{% endblock %}
+
+{% block content %}
+<header>
+    <div class="logo">Досуг и Ко</div>
+    <nav>
+        <ul>
+            <li><a href="{% url 'users:account' %}"><i class="fas fa-home"></i> Главная</a></li>
+            <li><a href="{% url 'users:account' %}"><i class="fas fa-user-circle"></i> Аккаунт</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="container">
+    <h1>Добавить новое место</h1>
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="form-group">
+        {{ form.name.label_tag }}
+        {{ form.name }}
+    </div>
+    
+    <div class="form-group">
+        <label>Изображение места</label>
+        <div class="image-upload-container">
+            <div class="image-preview" id="image-preview">
+                <img src="{% static 'images/default-place.png' %}" alt="Предпросмотр" data-default-src="{% static 'images/default-place.png' %}">
+            </div>
+            <div class="upload-controls">
+                <label for="id_image" class="upload-btn">
+                    <i class="fas fa-cloud-upload-alt"></i> Выбрать изображение
+                </label>
+                {{ form.image }}
+                <div id="file-info" class="file-info">Файл не выбран</div>
+            </div>
+        </div>
+        {% for error in form.image.errors %}
+            <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.description.label_tag }}
+        {{ form.description }}
+    </div>
+    
+    <div class="form-group">
+        {{ form.short_description.label_tag }}
+        {{ form.short_description }}
+    </div>
+    
+    <div class="form-group">
+        {{ form.category.label_tag }}
+        {{ form.category }}
+    </div>
+        
+        <button type="submit" id="submit-btn">Добавить место</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/add_place.js' %}"></script>
+{% endblock %}
