@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+<header>
+    <div class="logo">Досуг и Ко</div>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}" id="home-link"><i class="fas fa-home"></i> Главная</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="container">
+         <div class="left-column">
+            <div class="image">
+                <img src="https://i.pinimg.com/originals/d9/23/41/d923414e4f4034b544dc9c0a6d821d47.png" alt="Сад" class="garden">
+            </div>
+            <div class="account-actions">
+                <a href="{% url 'places:add_place' %}" class="action-btn">
+                    <i class="fas fa-plus-circle"></i> Добавить свое место
+                </a>
+                <a href="{% url 'places:add_feedback' %}" class="action-btn">
+                    <i class="fas fa-comment-alt"></i> Добавить отзыв и комментарий
+                </a>
+            </div>
+        </div>
+        <div class="personal-data">
+            <h1>Личные данные</h1>
+            
+            <div class="personal-info">
+                <div>
+                    <span class="label">Имя:</span>
+                    <span id="firstName">{{ user.first_name }}</span>
+                </div>
+                <div>
+                    <span class="label">Фамилия:</span>
+                    <span id="lastName">{{ user.last_name }}</span>
+                </div>
+                <div>
+                    <span class="label">Логин:</span>
+                    <span id="username">{{ user.username }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="account-data">
+            <h1>Мои места</h1>
+            <ul class="visited-places" id="visitedPlaces">
+                {% for visit in visited_places %}
+                <li class="place-item">
+                    <div class="place-title">{{ visit.place.name }}</div>
+                    {% if visit.mark %}
+                    <div class="place-description">Оценка: {{ visit.mark }}/10</div>
+                    {% else %}
+                    <div class="place-description">Оценка: нет оценки</div>
+                    {% endif %}
+                    {% if visit.feedback %}
+                    <div class="place-description">Отзыв: {{ visit.feedback|truncatechars:100 }}</div>
+                    {% else %}
+                    <div class="place-description">Отзыв: нет отзыва</div>
+                    {% endif %}
+                </li>
+                {% empty %}
+                <li>Вы еще не посещали места</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</main>
+{% endblock %}
