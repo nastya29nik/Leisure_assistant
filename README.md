@@ -22,7 +22,7 @@ leisure_bot/
 │   ├── templates/      
 │   ├── admin.py        
 │   ├── models.py      
-│   ├── views.py
+│   ├── views.py  
 │   ├── utils.py       
 │   └── urls.py        
 ├── users/               
