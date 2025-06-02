@@ -22,8 +22,7 @@ leisure_bot/
 │   ├── templates/      
 │   ├── admin.py        
 │   ├── models.py      
-│   ├── views.py  
-│   ├── utils.py       
+│   ├── views.py        
 │   └── urls.py        
 ├── users/               
 │   ├── migrations/  
@@ -37,14 +36,14 @@ leisure_bot/
 │   ├── css/            
 │   ├── js/             
 │   └── images/  
-├── media/places/images/         
+├── media/places/images\         
 ├── manage.py           
 └── requirements.txt    
 ## База данных
 **Таблицы:**
 + Users: 
   + username 
-  + password 
+  + password_hash 
   + first_name
   + last_name
 + Places_category: 
@@ -82,4 +81,3 @@ leisure_bot/
 - CSS3 (стилизация)
 - JavaScript (логика)
 - Fetch API (асинхронные запросы)
-
