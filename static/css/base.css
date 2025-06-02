@@ -1,0 +1,30 @@
+.messages {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    max-width: 400px;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 10px;
+    color: white;
+    opacity: 0.9;
+}
+
+.alert-error {
+    background-color: #f44336; 
+}
+
+.alert-success {
+    background-color: #4CAF50; 
+}
+
+.alert-info {
+    background-color: #2196F3; 
+}
+
+.alert-warning {
+    background-color: #ff9800;
+}

@@ -1,0 +1,232 @@
+header {
+    background-color: #38035f;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #333;
+    background-color: rgb(232, 218, 255);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    gap: 30px; 
+    flex-direction: row;
+    height: 100vh; 
+    overflow: hidden;
+}
+
+.personal-data {
+    background-color: white;
+    padding: 30px;
+    height: 45vh;
+}
+
+.account-data {
+    background-color: white;
+    padding: 30px;
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+h1 {
+    color: #5d2d8b;
+    border-bottom: 2px solid #43055a;
+    padding-bottom: 10px;
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+
+.personal-info div {
+    margin-bottom: 15px;
+}
+
+.label {
+    font-weight: bold;
+    display: inline-block;
+    width: 80px;
+    color: #38035f;
+}
+
+.password-mask {
+    letter-spacing: 3px;
+}
+
+.visited-places {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.place-item {
+    margin-bottom: 15px;
+    padding-left: 15px;
+    border-left: 3px solid #38035f;
+}
+
+.place-title {
+    font-weight: bold;
+    color: #38035f;
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+.place-description {
+    color: #38035f;
+    font-size: 0.9em;
+}
+
+.edit-btn {
+    background-color: #38035f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 0.8em;
+}
+
+.edit-btn:hover {
+    background-color: #3a1942;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.garden {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.account-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.action-btn {
+    background-color: #38035f;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.action-btn:hover {
+    background-color: #38035f;
+}
+
+.action-btn i {
+    font-size: 18px;
+}
+.left-column {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap: 30px;
+}
+.account-data::-webkit-scrollbar {
+    width: 8px;
+}
+
+.account-data::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.account-data::-webkit-scrollbar-thumb {
+    background: #38035f;
+    border-radius: 4px;
+}
+
+.account-data::-webkit-scrollbar-thumb:hover {
+    background: #2a0249;
+}
+
+.account-data h1 {
+    flex-shrink: 0;
+}
+
+.visited-places {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #5d2d8b #f0f0f0;
+}
+
+.visited-places::-webkit-scrollbar {
+    width: 8px;
+}
+
+.visited-places::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.visited-places::-webkit-scrollbar-thumb {
+    background: #5d2d8b;
+    border-radius: 4px;
+}
+
+.place-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-left: 3px solid #38035f;
+    background: #f9f5ff;
+    border-radius: 4px;
+}
+
+@media (min-height: 600px) {
+    .account-data {
+        max-height: 45vh;
+        overflow-y: auto;
+    }
+}
